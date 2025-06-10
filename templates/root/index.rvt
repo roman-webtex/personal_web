@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="uk" data-bs-theme="auto">
+<?= [$::request::blockClass getBlock "head"] ?>
+<?= [$::request::blockClass getBlock "header"] ?>
+<div class="main-page">
+    <div class="main-content">
+        <?= [$::request::blockClass getBlock "messages"] ?>
+        <?= [$::request::blockClass getBlock "body"] ?>
+    </div>
+</div>
+<?= [$::request::blockClass getBlock "footer"]?>
+<script src='/script/js/bootstrap.bundle.min.js'></script>
+<script src='/script/js/cheatsheet.js'></script>
+</html>

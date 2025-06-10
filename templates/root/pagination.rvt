@@ -1,0 +1,42 @@
+<?
+    set pageNom [$::request::blockClass getPageNom]
+    if {$pageNom == ""} {
+        set pageNom 1
+    }
+    set lastPage [expr {[$::request::blockClass getLastPage] ==  $pageNom}]
+
+    if {$pageNom == 1} {
+        set prevStyle "disabled"
+        set nextStyle ""
+        set pages [list 1 2 3]
+    } elseif {$lastPage} {
+        set prevStyle ""
+        set nextStyle "disabled"
+        set pages [list [expr {$pageNom - 2}] [expr {$pageNom - 1}] $pageNom]
+    } else {
+        set prevStyle ""
+        set nextStyle ""
+        set pages [list [expr {$pageNom - 1}] $pageNom [expr {$pageNom + 1}]]
+    }
+?>
+<div class="bd-example">
+    <nav aria-label="Another pagination example">
+      <ul class="pagination pagination-lg flex-wrap">
+        <li class="page-item <?= $prevStyle?>">
+          <a class="page-link" data-role="prev"><?= [$::request::blockClass convert "Перша"] ?></a>
+        </li>
+        <li class="page-item <? if {$pageNom == [lindex $pages 0]} { puts -nonewline active} ?>">
+            <a class="page-link" data-role="page"><?= [lindex $pages 0] ?></a>
+        </li>
+        <li class="page-item <? if {$pageNom == [lindex $pages 1]} { puts -nonewline active} ?>">
+            <a class="page-link" data-role="page"><?= [lindex $pages 1] ?></a>
+        </li>
+        <li class="page-item <? if {$pageNom == [lindex $pages 2]} { puts -nonewline active} ?>">
+            <a class="page-link" data-role="page"><?= [lindex $pages 2] ?></a>
+        </li>
+        <li class="page-item <?= $nextStyle?>">
+          <a class="page-link" data-role="next"><?= [$::request::blockClass convert "Остання"] ?></a>
+        </li>
+      </ul>
+    </nav>
+</div>

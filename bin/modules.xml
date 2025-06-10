@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<app>
+    <modules>
+        <module name="Головна сторінка" url="/" title="Головна"/>
+        <module name="Інформація по військовослужбовцям ТКП" url="/persons" title="Особовий склад"/>
+        <module name="Каталог документів" url="/documents" title="Документи"/>
+    </modules>
+</app>

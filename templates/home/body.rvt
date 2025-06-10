@@ -1,0 +1,53 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-lg-7 text-center text-lg-start">
+        <img class="col-lg-10 fs-4" src="/media/img/tyl.jpeg" style="filter: brightness(110%);">
+      </div>
+      <div class="col-md-10 mx-auto col-lg-5">
+<? if {![$::request::blockClass isLoggedOn]} { ?>
+        <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" id="login_form" action="/home/index/login">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" placeholder="<?= [$::request::blockClass convert "Ім'я користвача"]?>">
+            <label for="floatingInput"><?= [$::request::blockClass convert "Ім'я користувача"]?></label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="<?= [$::request::blockClass convert "Пароль"] ?>">
+            <label for="floatingPassword"><?= [$::request::blockClass convert "Пароль"] ?></label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary" type="button" onclick="login_form_submit()"><?= [$::request::blockClass convert "Увійти"] ?></button>
+          <hr class="my-4">
+          <small class="text-body-secondary">&copy;2024 A7015 AFU</small>
+        </form>
+<? } else { ?>
+          <div class="mb-3">
+            <div class="bd-example">
+                <button type="button" class="btn btn-outline-primary" onclick="logout()"><?= [$::request::blockClass convert "Вихід"]?></button>
+            </div>
+          </div>
+<? } ?>
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function login_form_submit() {
+        const loginForm = document.getElementById("login_form");
+        const response = fetch('/home/index/login', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({user: loginForm.elements.floatingInput.value, pass: loginForm.elements.floatingPassword.value})
+        })
+        .then(function(response) {
+            document.location.reload();
+        })
+    }
+    function logout() {
+        const response = fetch('/home/index/logout', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'}
+        })
+        .then(function(response){
+            document.location.reload();
+        })
+    }
+</script>

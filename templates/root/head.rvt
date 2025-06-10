@@ -1,0 +1,12 @@
+<head>
+    <meta http-equiv='Content-Type' content='Type=text/html; charset=utf-8'>
+    <title><? puts [$::request::blockClass convert $::title] ?></title>
+    <meta name="description" content="<? puts [$::request::blockClass convert "ТКП логістика"] ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#000000">
+    <meta name="copyright" content="(C) 2024 Roman Dmytrenko">
+    <meta charset="utf-8"> 
+    <link href="/script/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/script/css/cheatsheet.css" rel="stylesheet">
+</head>

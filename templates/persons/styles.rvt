@@ -1,0 +1,60 @@
+<style>
+body {
+    font-size: 0.8rem;
+}
+.main-page {
+    display:flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.main-content {
+    text-align:center;
+    width: 96%;
+    padding-top: 5rem;
+}
+.main-info {
+    padding:3px;
+    text-align:left;
+}
+.table-responsive {
+    text-align: left;
+}
+.navbar-nav .nav-link.active {
+    text-decoration: underline;
+}
+.accordion-button {
+    padding: 3px 5px;
+    font-size: 0.8rem;
+}
+.btn {
+    padding: 3px 10px;
+    font-size: 0.8rem;
+}
+.alert {
+    margin-top: 1rem;
+}
+.vacation {
+    background-color:#f2f21d;
+}
+.vacation-out {
+    background-color:#e7b5b5;
+}
+.vacation-close {
+    background-color:#ff0000;
+}
+.vacation-now {
+    background-color:#a32bc2;
+}
+.hospital {
+    background-color:#b5cbe7;
+}
+.vidr {
+    background-color:#f3ad56;
+}
+.table-header {
+    background-color:#d0d0d0;
+}
+</style>

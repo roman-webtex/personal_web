@@ -1,0 +1,33 @@
+<script type="text/javascript">
+document.querySelectorAll('.page-link')
+    .forEach(link => {
+        link.addEventListener('click', event => {
+            if(link.parentElement.classList.contains('active') || link.parentElement.classList.contains('disabled')) {
+                return false;
+            }
+            const currentPage = <?= [$::request::blockClass getPageNom]?>;
+            if(link.dataset.role == 'page') {
+                _pageNom = link.firstChild.textContent;
+            } else if(link.dataset.role == 'prev') {
+                _pageNom = 1
+            } else {
+                _pageNom = <?= [$::request::blockClass getLastPage] ?>
+            }
+            document.location.href = document.location.pathname + '?p=' + _pageNom;
+        })
+    });
+
+
+function doSearch(element) {
+    const searchText = element.previousElementSibling.value;
+    const searchUrl = element.parentElement.action;
+    if (searchText == '' || searchUrl == '#') {
+        return false;
+    }
+    
+    document.location.href = searchUrl + '?s=' + searchText ;
+}
+function selectYear(element) {
+    document.location.href = document.location.pathname + '?year=' + element.text ;
+}
+</script>

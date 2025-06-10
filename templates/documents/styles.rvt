@@ -1,0 +1,59 @@
+<style>
+body {
+    font-size: 0.8rem;
+}
+.main-page {
+    display:flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.main-content {
+    text-align:center;
+    width: 96%;
+    padding-top: 5rem;
+}
+.main-info {
+    padding:3px;
+    text-align:left;
+}
+.accordion {
+    text-align: left;
+}
+.accordion-button {
+    padding: 3px 5px;
+    font-size: 0.8rem;
+}
+.btn {
+    padding: 3px 10px;
+    font-size: 0.8rem;
+}
+.pagination {
+    display: inline-flex;
+    cursor: pointer;
+}
+.page-link {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+}
+.navbar-nav .nav-link.active {
+    text-decoration: underline;
+}
+.dropstart {
+    text-align: end;
+}
+.alert {
+    margin-top: 1rem;
+}
+.positive-control {
+    background-color:#89eb26;
+}
+.near-date {
+    background-color:#ba0000;
+}
+.out-date {
+    background-color:#fb9898;
+}
+</style>

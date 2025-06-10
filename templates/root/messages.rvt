@@ -1,0 +1,7 @@
+<? if {[$::request::blockClass isMessage] == 1 } { ?>
+    <div class="alert alert-<?= [$::request::blockClass getMessageType] ?> alert-dismissible fade show" role="alert">
+        <?= [$::request::blockClass convert [$::request::blockClass getMessageText]] ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<? } ?>
+
